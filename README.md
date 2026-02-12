@@ -17,5 +17,6 @@ This project demonstrates a simple **Flask web application** deployed using **Do
 - src/app.py (this file)
 - Dockerfile --- dockerfile for the application
 - requirements.txt
-- Jenkinsfile -- automate the process of building the docker image and run docker container
+- Jenkinsfile -- automate the process of building the docker image and run docker container and also verifies the application deployment
+
 
