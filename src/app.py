@@ -5,7 +5,25 @@ app = Flask(__name__)
 # Home route
 @app.route("/")
 def home():
-    return "Welcome to Jenkins + Docker Demo App!"
+    return """
+    <h1>Welcome to Jenkins + Docker Demo App!</h1>
+    <p>This is a sample Flask application deployed with Jenkins and Docker.</p>
+    <ul>
+        <li><a href="/health">Health Check</a></li>
+        <li><a href="/hello/World">Say Hello</a></li>
+        <li><a href="/items">View Items</a></li>
+    </ul>
+    <h2>Calculator</h2>
+    <form action="/add" method="get">
+        <label for="a">First number:</label>
+        <input type="text" id="a" name="a" required>
+        <br><br>
+        <label for="b">Second number:</label>
+        <input type="text" id="b" name="b" required>
+        <br><br>
+        <input type="submit" value="Add">
+    </form>
+    """
 
 # Health check route
 @app.route("/health")
