@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     sh "docker rm -f ${IMAGE_NAME} || true"
-                    sh "docker run -d --name ${IMAGE_NAME} -p 8080:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
+                    sh "docker run -d --name ${IMAGE_NAME} -p 5000:8080 ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
         stage('Verify Deployment') {
             steps {
                 script {
-                    sh "curl -f http://localhost:8080 || exit 1"
+                    sh "curl -f http://localhost:5000 || exit 1"
                 }
             }
         }
